@@ -1,0 +1,2 @@
+import {useRef} from "react";
+export default function OTPInput({value,onChange}){const refs=useRef([]);const set=(e,i)=>{const d=e.target.value.replace(/\D/g,"").slice(-1);let a=value.padEnd(6," ").split("");a[i]=d||" ";onChange(a.join("").replace(/\s+$/,""));if(d&&i<5)refs.current[i+1]?.focus()};return <div className="otp-row">{[0,1,2,3,4,5].map(i=><input key={i} ref={x=>refs.current[i]=x} value={value[i]||""} onChange={e=>set(e,i)} onKeyDown={e=>{if(e.key==="Backspace"&&!value[i]&&i>0)refs.current[i-1]?.focus()}} inputMode="numeric" maxLength="1"/>)}</div>}
