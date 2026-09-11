@@ -13,4 +13,5 @@ venv/
 
 # Node
 node_modules/
-dist/
+dist/.env
+__pycache__
