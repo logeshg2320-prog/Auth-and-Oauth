@@ -10,7 +10,7 @@ load_dotenv()
 
 
 r = redis.Redis(
-    host="redis",
+    host="localhost",
     port=6379,
     db=0,
     decode_responses=True
